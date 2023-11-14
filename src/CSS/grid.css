@@ -1,0 +1,31 @@
+.grid_container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .grid_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* 자동으로 열 생성 */
+    gap: 20px; /* 그리드 간의 간격 */
+  }
+  
+  .animal_grid_item {
+    border: 1px solid #dddbdb;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .animal_grid_item img{
+    cursor: pointer;
+  }
+  
+.grid_image{
+    width: 230px;
+    height: 230px;
+}
