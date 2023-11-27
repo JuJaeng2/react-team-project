@@ -48,16 +48,11 @@ export default function Map(props) {
 
     return (
         <div>
-            <h1>보호소 위치</h1>
+            <h4>보호소 위치</h4>
             <div id="map" style={{
                 width: '500px',
                 height: '500px'
             }}></div>
-            <div>
-                <h2>
-                    전화번호 : {careTel}
-                </h2>
-            </div>
         </div>
     )
 }

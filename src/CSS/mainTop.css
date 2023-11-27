@@ -1,10 +1,15 @@
+body{
+    right: 100px;
+}
+
 #slider_container{
     margin: 30px 0;
 }
 
-/* .imageSlider{
-    width: 600px;
-} */
+#bar{
+    background-color: #B0926A;
+}
+
 
 .slick-initialized .slick-slide{
     display: flex;
@@ -12,15 +17,15 @@
     justify-content: center;
 }
 
-img{
-    height:500px;
+.slide_image{
+    height:700px;
 }
 
 #bar{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     width: 100%;
 }
 
@@ -40,4 +45,10 @@ img{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+a{
+    text-decoration-line: none;
+    color: black;
+    font-size: 130%;
 }

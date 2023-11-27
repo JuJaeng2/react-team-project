@@ -9,22 +9,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 100;
   }
   
-  .modal {
+  .my_modal {
     background: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
+    overflow: scroll;
+
+    transform: (1);
+    opacity: 2;
+
   }
   
-  .detail img {
-    height: 350px;
+  .detail-img {
+    /* height: 350px; */
     width: 350px;
   }
   
-  .modal button {
+  .my_modal button {
     margin-top: 10px;
     padding: 5px 10px;
     background: #3498db;
@@ -34,7 +40,7 @@
     cursor: pointer;
   }
 
-.modal-container{
+.my_modal_container{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,4 +48,68 @@
 
 .container1{
   margin: 10px 30px;
+}
+/* ------- NEW  ------- */
+
+.info_modal{
+  display: block;
+  top: 5%;
+  height: 100%;
+  width: 80%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+  max-height: 90%;
+  margin: auto;
+  overflow-y: auto;
+  border-radius: 2px;
+}
+
+.info_modal_content{
+  position: absolute;
+  height: calc(100%-10px);
+  max-height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  padding: 3px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.section1{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.section2{
+  margin-right: 30px;
+}
+
+.info_modal_footer{
+  border-top: 1px solid rgba(0,0,0,0.1);
+  position: absolute;
+  bottom: 0;
+
+  z-index: 1005;
+  border-radius: 0 0 2px 2px;
+  background-color: #fafafa;
+  padding: 4px 6px;
+  height: 56px;
+  width: 100%;
+  text-align: right;
+
+}
+
+.info_modal_footer a{
+  margin: 6px 0;
+}
+
+.content_title{
+  margin: 10px 10px;
 }

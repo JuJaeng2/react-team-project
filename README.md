@@ -2,6 +2,6 @@
 
 ### npm install axios
 
-### npm install reack-slick
+### npm install react-slick
 
 ### npm install slick-carousel

@@ -25,7 +25,22 @@
     cursor: pointer;
   }
   
-.grid_image{
+.card_image{
     width: 230px;
     height: 230px;
+}
+
+.more_info:hover{
+  cursor: pointer;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* 또는 다른 정렬 옵션을 선택할 수 있습니다 */
+}
+
+.card {
+  width: 300px; 
+  margin: 10px; 
 }

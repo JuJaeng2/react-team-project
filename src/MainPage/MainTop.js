@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../CSS/mainTop.css';
+// import '../materialize.css';
 
 const MainTop = () => {
   const images = [
@@ -26,27 +27,25 @@ const MainTop = () => {
     autoplaySpeed: 3500, // 넘어가는 속도를 2초로 설정 (ms 단위)
   };
 
+  
+
   return (
     <>
-    <div id='bar'>
-        
-        <div id='menu'>
-            <span><a href='#'>보호소 찾기</a></span>
-            <span><a href='#'>품종별 조회</a></span>
-        </div>
-        <div id='title'>
-            <h1>멍멍왈왈</h1>
-        </div>
-        <div id='login'>
-            <a href='#'>로그인 / 회원가입</a>
-        </div>
-        
+    <nav>
+    <div class="nav-wrapper brown lighten-2">
+      <a href="#" class="brand-logo center">멍멍 왈왈</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="#l">보호소 찾기</a></li>
+        <li><a href="#">품종별 조회</a></li>
+        <li><a href="#l">로그인 / 회원가입</a></li>
+      </ul>
     </div>
+  </nav>
     <div id='slider_container'>
       <Slider {...settings} className='imageSlider'>
         {images.map((image, index) => (
           <div key={index}>
-            <img src={image} alt={`Slide ${index + 1}`} />
+            <img className="slide_image" src={image} alt={`Slide ${index + 1}`} />
           </div>
         ))}
       </Slider>
