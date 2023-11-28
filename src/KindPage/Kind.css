@@ -1,0 +1,121 @@
+
+/*제목--------------------*/
+h3{
+    color: black;
+    font-weight: 600;
+    font-size: 50px;
+    text-align:center;
+}
+hr{
+    width: 95%
+}
+/*페이지 사이즈--------------------*/
+.pageTop{
+    background: white;
+    /* width: 100%; */
+    height: 300px;
+    padding-top: 20px;
+}
+.pageMiddle{
+    /* background: gray; */
+    /* width: 100%; */
+    height: 1380px;
+}
+.pageBottom{
+    background: whitesmoke;
+    /* width: 100%; */
+    height: 200px;
+}
+/*카테고리--------------------*/
+li{
+    list-style: none;
+}
+ul li{
+    display: flex;
+    justify-content: center;
+} 
+ul li a{
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+    text-decoration: none;
+}
+ul li a:hover{color:pink;}
+ul li a p{
+    font-weight:bold;
+    margin: 13px 20px;
+}
+/*Middle--------------------*/
+.textBox{
+    padding: 30px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+    /* margin-left: 200px;
+    margin-right: 200px; */
+    text-align: center;
+    font-weight: bold;  
+}
+.kategorieButton button{
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-right: 25px;
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+    background-color: pink;
+    text-align: center;
+    font-size: 13px;
+    border: none;
+    border-radius: 10%;
+    font-weight: bold;  
+}
+.kategorieButton button:hover{
+    color: gray;
+}
+/*API 화면--------------------*/
+.middleArea{
+    display: flex;
+    justify-content: center;
+}
+.animalArea{
+    display: grid;
+    /* justify-content: center; */
+    /* place-items: center; */
+    grid-template: repeat(3, 320px) / repeat(5, 1fr); /*300px 높이의 행2개와 분수폭이 동일한 열3개*/
+    row-gap: 10px;
+    column-gap: 20px;
+}
+.animalBox{
+    /* background-color: aqua; */
+    /* flex-direction: row; */
+    /* flex-wrap: nowrap; */
+    /* justify-content: center; */
+    text-align: center;
+    background-color: pink;
+    padding: 5px;
+    /* margin: 10px; */
+    width: 200px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5%;
+}
+.infoBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/*API 파트--------------------*/
+.animalImg{
+    width: 170px;
+    height: 180px;
+    padding-top: 10px;
+}
+.nameBox{
+    font-size: 13px;
+    font-weight: bold;  
+    text-align: center;
+}
