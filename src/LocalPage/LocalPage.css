@@ -1,0 +1,75 @@
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 1015px;
+    height: 1000px;
+    overflow-y: auto; /* 세로 스크롤만 허용 */
+    overflow-x: hidden; /* 가로 스크롤 제거 */
+  
+    /* Webkit 브라우저에서만 적용됨 */
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent; /* 스크롤바 색상 */
+  }
+  
+  /* Webkit 브라우저에서만 적용됨 */
+  .popup::-webkit-scrollbar {
+    width: 0.5em; /* 세로 스크롤바 너비 */
+  }
+  
+  .popup::-webkit-scrollbar-thumb {
+    background-color: transparent; /* 스크롤바 색상 */
+  }
+  
+  .popup::-webkit-scrollbar-track {
+    background: transparent; /* 스크롤바 트랙 색상 */
+  }
+  
+  
+  .popup ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .popup li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc; /* Add this line to create a gray border line */
+  }
+  .popup button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .popup button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Additional styles for map container */
+  .map-container {
+    position: relative;
+  }
+  
+  /* Style to dim the background when the popup is active */
+  .popup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+  }
+  
+  .popup-active .popup-background {
+    display: block;
+  }
