@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
   import axios from 'axios';
   import map from "./localmap.jpg";
   import './LocalPage.css';
@@ -134,6 +135,18 @@ import React, { useState, useEffect } from 'react';
       setSelectedRegion(areaCode);
     };
     return (
+      <>
+<nav>
+    <div class="nav-wrapper brown lighten-2">
+      <a href="#" class="brand-logo center">멍멍 왈왈</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><Link to="/local">보호소 찾기</Link></li>
+        <li><a href="#">품종별 조회</a></li>
+        <li><a href="#l">로그인 / 회원가입</a></li>
+      </ul>
+    </div>
+  </nav>
+
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <img
           src={map}
@@ -182,6 +195,7 @@ import React, { useState, useEffect } from 'react';
         </div>
       )}
       </div>
+      </>
     );
   };
 

@@ -5,3 +5,5 @@
 ### npm install react-slick
 
 ### npm install slick-carousel
+
+### npm install react-router-dom
