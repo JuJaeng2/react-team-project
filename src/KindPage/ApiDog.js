@@ -10,9 +10,9 @@ function ApiDog() {
 
     const fetchData = async () => {
         try {
-            setError(null); //요청 시작할 때 error와 data 초기화
-            setData(null); // ''
-            setLoading(true); //loading 상태 true로 변환
+            // setError(null); //요청 시작할 때 error와 data 초기화
+            // setData(null); // ''
+            // setLoading(true); //loading 상태 true로 변환
 
             //API에서 불러온 응답값을 response 변수에 저장
             const response = await axios.get('http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?serviceKey=Kuw7qz9iFZ7XGYZCYQEom6OIemqiDnE3X81FZwzJKlapn9l7WVSxtn9vlw75ae0pwIaGOZ2bc%2FepKIRAJ%2BJQPA%3D%3D', {
@@ -38,6 +38,18 @@ function ApiDog() {
         fetchData();
     }, []);
 
+    const [modalOpen, setModalOpen] = useState(false); // 모달 상태 추가
+    const [selectedDog, setSelectedDog] = useState(null); // 선택한 품종 정보 추가
+
+    const openModal = (dog) => {
+        setModalOpen(true);
+        setSelectedDog(dog);
+    };
+    const closeModal = () => {
+        setModalOpen(false);
+        setSelectedDog(null);
+    };
+
     if(loading) return <div>Loading...</div>;
     if(error)   return <div>Error: {error.message}</div>;
     if(!data || !Array.isArray(data)) return null;
@@ -48,7 +60,11 @@ function ApiDog() {
                 {data.map((dog) => (   //JSX에서 'data'를 사용할 때, 'data'가 배열인지 확인하고 매핑하여 렌더링
                     <div className="animalBox" key={dog.kindCd}>
                         <div className="infoBox">
-                            <img className="animalImg" src={dog.filename}></img>
+                            <img className="animalImg" 
+                            src={dog.filename}
+                            alt={`Dog ${dog.kindCd}`}
+                            onClick={() => openModal(dog)}>
+                            </img>
                             <div className="nameBox">
                                 <p>품종: {dog.kindCd}</p>
                                 <p>성별: {dog.sexCd}</p> 
@@ -58,6 +74,29 @@ function ApiDog() {
                     </div>
                 ))}
             </div>
+
+            {modalOpen && (
+                <div className="modal">
+                    <div className="modalInfoBox">
+                        <div className="modalImgBox">
+                            <img className="modalAnimalImg" src={selectedDog.filename}></img>
+                        </div>
+                        <div className="box">
+                            <span className="close" onClick={closeModal}>
+                                X
+                            </span>
+                            <p>품종 : {selectedDog.kindCd} ({selectedDog.sexCd})</p>
+                            <p>색상 : {selectedDog.colorCd}</p>
+                            <p>나이 : {selectedDog.age}</p>
+                            <p>체중 : {selectedDog.weight}</p>
+                            <p>중성화 여부 (Y/N/U) : {selectedDog.neuterYn}</p>
+                            <p>특징 : {selectedDog.specialMark}</p>
+                            <p>보호소명 : {selectedDog.careNm}</p>
+                            <p>보호소 번호 : {selectedDog.careTel}</p>
+                        </div>
+                    </div>
+                </div>
+            )};
         </div>
     );
 }

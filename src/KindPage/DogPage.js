@@ -47,7 +47,11 @@ function DogPage() {
                 <hr/>
             </ul>
             <div className="textBox">
-                마음이 가는 가족을 찾아보세요.
+                마음이 가는 가족을 찾아보세요. <br /><br /><br />
+                사진을 선택하여 세부정보를 볼 수 있습니다.<br /><br /><br />
+                ＊<br />
+                ＊<br />
+                ＊
             </div>
             <ul className="Kategorie">
                 <li className="kategorieButton">
@@ -58,7 +62,6 @@ function DogPage() {
             </ul>
         <div>
         {renderSelectedCategory()}
-            {/* <ApiDog/> */}
         </div>
         </div>
         <div className="pageBottom">

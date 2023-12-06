@@ -39,6 +39,19 @@ function ApiEtc() {
         fetchData();
     }, []);
 
+    const [modalOpen, setModalOpen] = useState(false); // 모달 상태 추가
+    const [selectedEtc, setSelectedEtc] = useState(null); // 선택한 품종 정보 추가
+
+    const openModal = (etc) => {
+        setModalOpen(true);
+        setSelectedEtc(etc);
+    };
+    const closeModal = () => {
+        setModalOpen(false);
+        setSelectedEtc(null);
+    };
+
+
     if(loading) return <div>Loading...</div>;
     if(error)   return <div>Error: {error.message}</div>;
     if(!data || !Array.isArray(data)) return null;
@@ -49,7 +62,11 @@ function ApiEtc() {
                 {data.map((etc) => (   //JSX에서 'data'를 사용할 때, 'data'가 배열인지 확인하고 매핑하여 렌더링
                     <div className="animalBox" key={etc.kindCd}>
                         <div className="infoBox">
-                            <img className="animalImg" src={etc.filename}></img>
+                            <img className="animalImg" 
+                            src={etc.filename}
+                            alt={`Etc ${etc.kindCd}`}
+                            onClick={() => openModal(etc)}>
+                            </img>
                             <div className="nameBox">
                                 <p>품종: {etc.kindCd}</p>
                                 {/* <p>품종명: {dog.KNm}</p> */} 
@@ -59,6 +76,29 @@ function ApiEtc() {
                     </div>
                 ))}
             </div>
+            {modalOpen && (
+                <div className="modal">
+                    <div className="modalInfoBox">
+                        <div className="modalImgBox">
+                            <img className="modalAnimalImg" src={selectedEtc.filename}></img>
+                        </div>
+                        <div className="box">
+                            <span className="close" onClick={closeModal}>
+                                X
+                            </span>
+                            <p>품종 : {selectedEtc.kindCd} ({selectedEtc.sexCd})</p>
+                            <p>색상 : {selectedEtc.colorCd}</p>
+                            <p>나이 : {selectedEtc.age}</p>
+                            <p>체중 : {selectedEtc.weight}</p>
+                            <p>중성화 여부 (Y/N/U) : {selectedEtc.neuterYn}</p>
+                            <p>특징 : {selectedEtc.specialMark}</p>
+                            <p>보호소명 : {selectedEtc.careNm}</p>
+                            <p>보호소 번호 : {selectedEtc.careTel}</p>
+                        </div>
+                    </div>
+                </div>
+            )};
+
         </div>
     );
 }
