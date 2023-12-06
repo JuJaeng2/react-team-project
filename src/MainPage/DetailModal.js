@@ -6,14 +6,6 @@ import Map from './Map';
 export default function DetailModal(props) {
     const animalInfo = props.animalInfo;
 
-    const modal_style = {
-        display : 'block',
-        zIndex: 1005, 
-        opacity: 1,
-        transform: 'scaleX(1)',
-        top: '10%',
-    };
-
   return (
 
     <div className='info_modal'>
