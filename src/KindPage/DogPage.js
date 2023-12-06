@@ -3,7 +3,7 @@ import './Kind.css';
 import ApiDog from './ApiDog';
 import ApiCat from './ApiCat';
 import ApiEtc from './ApiEtc';
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function DogPage() {
@@ -39,19 +39,18 @@ function DogPage() {
             <ul className="menuBox">
                 <hr/>
                 <li>
-                    <a href="#"><p>메인 홈</p></a>
-                    <a href="#"><p>보호소 찾기</p></a>
-                    <a href="#"><p>품종별 검색</p></a>
-                    <a href="#"><p>커뮤니티</p></a>
+                    <a><Link to="/"><p>메인 홈</p></Link></a>
+                    <a><Link to="/local"><p>보호소 찾기</p></Link></a>
+                    <a><Link to="/dog-page"><p>품종별 검색</p></Link></a>
+                    <a><Link to="#"><p>커뮤니티</p></Link></a>
                 </li>
                 <hr/>
             </ul>
             <div className="textBox">
                 마음이 가는 가족을 찾아보세요. <br /><br /><br />
                 사진을 선택하여 세부정보를 볼 수 있습니다.<br /><br /><br />
-                ＊<br />
-                ＊<br />
-                ＊
+                <br />
+                <br />
             </div>
             <ul className="Kategorie">
                 <li className="kategorieButton">
