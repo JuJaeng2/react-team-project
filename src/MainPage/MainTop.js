@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../CSS/mainTop.css';
-import { Link } from 'react-router-dom';
 
 
 const MainTop = () => {
@@ -36,7 +36,7 @@ const MainTop = () => {
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a><Link to="/local">보호소 찾기</Link></a></li>
         <li><a><Link to="/dog-page">품종별 조회</Link></a></li>
-        <li><a href="#l">로그인 / 회원가입</a></li>
+        <li><a href="#">로그인 / 회원가입</a></li>
       </ul>
     </div>
   </nav>
