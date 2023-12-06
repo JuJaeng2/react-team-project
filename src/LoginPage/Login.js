@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Input from './Input01';
+// import Input from './Input01';
 
 class Login extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <div>
+        {/* <div>
           <Input
             label="이름"
             name="name"
@@ -56,7 +56,7 @@ class Login extends Component {
             errorMessage="비밀번호를 입력해야 합니다"
             onChange={this.onChange}
           />
-        </div>
+        </div> */}
         <div>
           <button onClick={this.onLoginHandler}>Login</button>
         </div>

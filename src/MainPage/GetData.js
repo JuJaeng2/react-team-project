@@ -13,13 +13,23 @@ export default function GetData() {
     const [error, setError] = useState(null);
 
     const getApiData = async () => {
+        const date = new Date();
+        const year = '' + date.getFullYear();
+        const month = ('0' + (date.getMonth() + 1)).slice(-2);
+        const day = ('0' + date.getDate()).slice(-2);
+        const endDate = year + month + day;
+        console.log('year : ' + year)
+        console.log(endDate);
         try{
+            const randomNumber = Math.floor(Math.random() * 1600) + 1;
+            
             const response = await axios.get('https://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?serviceKey=EJ5ad%2F7%2Fl4hCy%2BFbFes9e%2FcsQWSZzjf3sAemohfTwfu40P%2FO2QAHPQptK2mbiUNh13OosSiVUFzGPwVrUECQTw%3D%3D', {
                 params:{
                     bgnde : '20230101',
-                    endde : '20231010',
-                    pageNo : 1,
-                    numOfRows : 50,
+                    // endde : '20231010',
+                    endde : `${endDate}`,
+                    pageNo : randomNumber,
+                    numOfRows : 52,
                     _type : 'json',
                 }
             });
@@ -50,7 +60,7 @@ export default function GetData() {
 
  
     if(loading) return <div class="progress white"><div class="indeterminate brown lighten-2"></div></div>
-    if(error) return <div><h1>Error...</h1></div>
+    if(error) return <div><h1>데이터 불러오기 실패</h1></div>
     return (
         <div className='grid_container'>
             <div className='grid_title'>
