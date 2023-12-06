@@ -138,11 +138,11 @@ import { Link } from 'react-router-dom';
       <>
 <nav>
     <div class="nav-wrapper brown lighten-2">
-      <a href="#" class="brand-logo center">멍멍 왈왈</a>
+      <Link to="/"><a class="brand-logo center">멍멍 왈왈</a></Link>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a><Link to="/local">보호소 찾기</Link></a></li>
         <li><a><Link to="/dog-page">품종별 조회</Link></a></li>
-        <li><a href="#">로그인 / 회원가입</a></li>
+        <li><a><Link to="/login">로그인 / 회원가입</Link></a></li>
       </ul>
     </div>
   </nav>

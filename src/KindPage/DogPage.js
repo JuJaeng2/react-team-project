@@ -42,7 +42,8 @@ function DogPage() {
                     <a><Link to="/"><p>메인 홈</p></Link></a>
                     <a><Link to="/local"><p>보호소 찾기</p></Link></a>
                     <a><Link to="/dog-page"><p>품종별 검색</p></Link></a>
-                    <a><Link to="#"><p>커뮤니티</p></Link></a>
+                    <a><Link to="/login"><p>로그인</p></Link></a>
+                    <a><Link to="/community"><p>커뮤니티</p></Link></a>
                 </li>
                 <hr/>
             </ul>
