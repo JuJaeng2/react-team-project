@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
   import axios from 'axios';
-  import map from "./localmap2.jpg";
+  import map from "./localmap.jpg";
   import './LocalPage.css';
 
   const Popup = ({ data, onClose }) => {
