@@ -10,9 +10,9 @@ function ApiDog() {
 
     const fetchData = async () => {
         try {
-            // setError(null); //요청 시작할 때 error와 data 초기화
-            // setData(null); // ''
-            // setLoading(true); //loading 상태 true로 변환
+            setError(null); //요청 시작할 때 error와 data 초기화
+            setData(null); // ''
+            setLoading(true); //loading 상태 true로 변환
 
             //API에서 불러온 응답값을 response 변수에 저장
             const response = await axios.get('http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?serviceKey=Kuw7qz9iFZ7XGYZCYQEom6OIemqiDnE3X81FZwzJKlapn9l7WVSxtn9vlw75ae0pwIaGOZ2bc%2FepKIRAJ%2BJQPA%3D%3D', {
@@ -20,14 +20,13 @@ function ApiDog() {
                     bgnde: 20220101, //검색 시작일
                     endde: 20221231, //검색 종료일
                     upkind: 417000, //축종코드 = 고양이 422400 / 기타 429900
-                    numOfRows: 15, //페이지당 노출 개수
+                    numOfRows: 30, //페이지당 노출 개수
                     _type: 'json', //응답 형태
                 },
             });
             const responseData = response.data.response.body.items.item;
             setData(responseData); //response 값을 data에 저장
         } catch(e) {
-            console.error('Error fetching data:', e);
             setError(e);
         } finally {
         setLoading(false);
@@ -50,7 +49,7 @@ function ApiDog() {
         setSelectedDog(null);
     };
 
-    if(loading) return <div>Loading...</div>;
+    if(loading) return <div className="loadMessage">Loading...</div>;
     if(error)   return <div>Error: {error.message}</div>;
     if(!data || !Array.isArray(data)) return null;
 
@@ -74,9 +73,8 @@ function ApiDog() {
                     </div>
                 ))}
             </div>
-
             {modalOpen && (
-                <div className="modal">
+                <div className="modal_1">
                     <div className="modalInfoBox">
                         <div className="modalImgBox">
                             <img className="modalAnimalImg" src={selectedDog.filename}></img>
@@ -96,7 +94,7 @@ function ApiDog() {
                         </div>
                     </div>
                 </div>
-            )};
+            )}
         </div>
     );
 }

@@ -21,7 +21,7 @@ function ApiEtc() {
                     bgnde: 20220101, //검색 시작일
                     endde: 20221231, //검색 종료일
                     upkind: 429900, //축종코드 = 고양이 422400 / 기타 429900
-                    numOfRows: 15, //페이지당 노출 개수
+                    numOfRows: 30, //페이지당 노출 개수
                     _type: 'json', //응답 형태
                 },
             });
@@ -52,7 +52,7 @@ function ApiEtc() {
     };
 
 
-    if(loading) return <div>Loading...</div>;
+    if(loading) return <div className="loadMessage">Loading...</div>;
     if(error)   return <div>Error: {error.message}</div>;
     if(!data || !Array.isArray(data)) return null;
 
@@ -69,7 +69,7 @@ function ApiEtc() {
                             </img>
                             <div className="nameBox">
                                 <p>품종: {etc.kindCd}</p>
-                                {/* <p>품종명: {dog.KNm}</p> */} 
+                                <p>성별: {etc.sexCd}</p> 
                                 <p>{etc.age}</p>
                             </div>
                         </div>
@@ -77,7 +77,7 @@ function ApiEtc() {
                 ))}
             </div>
             {modalOpen && (
-                <div className="modal">
+                <div className="modal_1">
                     <div className="modalInfoBox">
                         <div className="modalImgBox">
                             <img className="modalAnimalImg" src={selectedEtc.filename}></img>
@@ -97,8 +97,7 @@ function ApiEtc() {
                         </div>
                     </div>
                 </div>
-            )};
-
+            )}
         </div>
     );
 }
