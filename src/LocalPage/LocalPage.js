@@ -143,6 +143,7 @@ import { Link } from 'react-router-dom';
         <li><a><Link to="/local">보호소 찾기</Link></a></li>
         <li><a><Link to="/dog-page">품종별 조회</Link></a></li>
         <li><a><Link to="/login">로그인 / 회원가입</Link></a></li>
+        <li><a><Link to="/board">커뮤니티</Link></a></li>
       </ul>
     </div>
   </nav>
