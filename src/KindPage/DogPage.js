@@ -30,28 +30,29 @@ function DogPage() {
     return (
     <div className="App">
         <div className="pageTop">
-        <div className="titleBox">
-            <h3><br/></h3>
-            <h3>멍멍왈왈</h3>
-        </div>
+            <div className="titleBox">
+                <nav>
+                <div class="nav-wrapper brown lighten-2">
+                    <a href="#" class="brand-logo center">멍멍 왈왈</a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li><a><Link to="/local">보호소 찾기</Link></a></li>
+                        <li><a><Link to="/dog-page">품종별 조회</Link></a></li>
+                        <li><a><Link to="/login">로그인 / 회원가입</Link></a></li>
+                    </ul>
+                </div>
+                </nav>
+            </div>
         </div>
         <div className="pageMiddle">
-            <ul className="menuBox">
-                <hr/>
-                <li>
-                    <a><Link to="/"><p>메인 홈</p></Link></a>
-                    <a><Link to="/local"><p>보호소 찾기</p></Link></a>
-                    <a><Link to="/dog-page"><p>품종별 검색</p></Link></a>
-                    <a><Link to="/login"><p>로그인</p></Link></a>
-                    <a><Link to="/community"><p>커뮤니티</p></Link></a>
-                </li>
-                <hr/>
-            </ul>
             <div className="textBox">
-                마음이 가는 가족을 찾아보세요. <br /><br /><br />
+                *<br />
+                *<br />
+                *<br /><br /><br />
+                마음이 가는 가족을 찾아보세요. <br /><br />
                 사진을 선택하여 세부정보를 볼 수 있습니다.<br /><br /><br />
-                <br />
-                <br />
+                *<br />
+                *<br />
+                *<br /><br /><br />
             </div>
             <ul className="Kategorie">
                 <li className="kategorieButton">
