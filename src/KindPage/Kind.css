@@ -19,10 +19,6 @@
 li{
     list-style: none;
 }
-ul li{
-    display: flex;
-    justify-content: center;
-} 
 ul li a{
     padding-left: 20px;
     padding-right: 20px;

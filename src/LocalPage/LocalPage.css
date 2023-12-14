@@ -9,7 +9,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     width: 1015px;
-    height: 1000px;
+    height: 950px;
     overflow-y: auto; /* 세로 스크롤만 허용 */
     overflow-x: hidden; /* 가로 스크롤 제거 */
   
