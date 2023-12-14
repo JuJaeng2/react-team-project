@@ -36,6 +36,9 @@ const Board = () => {
             <li>
               <Link to="/login">로그인 / 회원가입</Link>
             </li>
+            <li>
+              <Link to="/Board">커뮤니티</Link>
+            </li>
           </ul>
         </div>
       </nav>
